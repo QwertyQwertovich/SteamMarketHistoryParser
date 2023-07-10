@@ -38,7 +38,7 @@ def parse_history(history, purchases, sales):
             purchases[name].append(amount)
 
 def save_to_csv(data, filename):
-    with open(filename, 'w', newline='') as file:
+    with open(filename, 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(["Name", "Average Purchase Price", "Quantity Purchased", "Average Sale Price", "Quantity Sold", "Percentage Difference", "Profit"])
         writer.writerows(data)

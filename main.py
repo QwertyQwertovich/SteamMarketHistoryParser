@@ -14,6 +14,9 @@ def get_history(count, start):
     return response.json()
 
 def parse_history(history, purchases, sales):
+    if 'events' not in history:
+        print("No events found")
+        return
     for event in history['events']:
         listing_id = event['listingid']
         event_type = event['event_type']

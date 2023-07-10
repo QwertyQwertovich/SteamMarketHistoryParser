@@ -55,7 +55,7 @@ def main():
 
     while start < total_count:
         history = get_history(count, start)
-        total_count = history['total_count']
+        total_count = max(history['total_count'], total_count)
         parse_history(history, purchases, sales)
         print(f"Processed: {start}, Remaining: {total_count - start}")
         start += count
